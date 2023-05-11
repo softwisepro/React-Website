@@ -4,8 +4,6 @@ import jwt_decode from "jwt-decode";
 import background_image from '../assets/background-home-image.jpg';
 import { GoogleLogin } from '@react-oauth/google';
 import { client } from '../client';
-import { FcGoogle } from 'react-icons/fc';
-import { Logo } from '../assets/icons/Logo';
 
 export const Login = () => {
     

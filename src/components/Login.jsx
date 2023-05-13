@@ -6,27 +6,25 @@ import { GoogleLogin } from '@react-oauth/google';
 import { client } from '../client';
 
 export const Login = () => {
-    
+
     const navigate = useNavigate();
 
 
     const onSuccess = (response) => {
-        //console.log(response);
-         const userObject = jwt_decode(response.credential);
-         //console.log(userObject);
-         localStorage.setItem('user', JSON.stringify(userObject));
-         const { name, sub, picture } = userObject;
-         const doc = {
-           _id: sub,
-           _type: 'user',
-           userName: name,
-           image: picture,
-         };
-         client.createIfNotExists(doc).then(() => {
-           navigate('/', { replace: true });
-         });
-     
-       }
+        const userObject = jwt_decode(response.credential);
+        localStorage.setItem('user', JSON.stringify(userObject));
+        const { name, sub, picture } = userObject;
+        const doc = {
+            _id: sub,
+            _type: 'user',
+            userName: name,
+            image: picture,
+        };
+        client.createIfNotExists(doc).then(() => {
+            navigate('home', { replace: true });
+        });
+
+    }
 
     const onFailure = (response) => {
         console.log("LOGIN FAILED! res: ", response);

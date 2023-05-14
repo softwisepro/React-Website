@@ -21,7 +21,7 @@ const Sidebar = ({ user, closeToggle }) => {
             to='/'
             onClick={handleCloseSidebar}
           >
-            <AiOutlineUser fontSize={40} className='cursor-pointer p-2 border rounded-full' />
+            <img src={user?.image} className='cursor-pointer p-2 border rounded-full' />
           </Link>
           <Link
             to='/'
@@ -38,7 +38,7 @@ const Sidebar = ({ user, closeToggle }) => {
             <AiOutlineHome fontSize={20}/><span className='text-xl'>Home</span>
           </NavLink>
           <NavLink
-            to='profile'
+            to={`profile/${user?._id}`}
             className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}
           >
             <AiOutlineUser fontSize={20}/><span>Profile</span>

@@ -21,7 +21,7 @@ const Sidebar = ({ user, closeToggle }) => {
             to='/'
             onClick={handleCloseSidebar}
           >
-            <img src={user?.image} className='cursor-pointer p-2 border rounded-full' />
+            <img src={user?.image} className='cursor-pointer w-8 p-2 border rounded-full' />
           </Link>
           <Link
             to='/'

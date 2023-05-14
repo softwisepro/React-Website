@@ -3,3 +3,5 @@ export const userQuery = (userId) => {
 
     return query;
 }
+
+export default userQuery

@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import background_image from '../assets/background-home-image.jpg';
@@ -8,7 +8,6 @@ import { client } from '../client';
 export const Login = () => {
 
     const navigate = useNavigate();
-
 
     const onSuccess = (response) => {
         const userObject = jwt_decode(response.credential);

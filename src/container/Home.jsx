@@ -39,7 +39,7 @@ export const Home = () => {
       <div className='flex md:hidden flex-row'>
         <div className='p-5 flex flex-row w-full justify-between items-center border'>
           <div className='cursor-pointer p-2 border rounded-full' onClick={() => setToggleSidebar(true)}>
-            <img src={user?.image} className=''/>
+            <img src={user?.image} />
           </div>
           <Link
             to='/'
